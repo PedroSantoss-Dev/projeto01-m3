@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link rel="stylesheet" href="style.css">
+    <title> Meus Filmes</title>
+</head>
+<body>
+    <main>
+         <div class="title">
+             <h1>Meus Filmes</h1>
+         </div>
+         
+        <section class="container">
+            <form  onsubmit="submitForm(event)" id="form" class="form"> 
+                <input type="text" required id="nome"  placeholder="Harry Potter">
+                <input type="text" required id="img"  placeholder="https://pt.wikipedia.org/wiki/Ficheiro:Harry_James_Potter_by_Reilly_Brown_(cropped).jpg">
+                <input type="text" required id="genero"  placeholder="Ficção">
+                <input type="text" required id="nota"  placeholder="10">
+                <input type="submit" class="btn-sub" >
+            </form>
+        </section>
+            <section class="list">
+                <div class="cardList" id="card">
+
+                </div>
+            </section>
+        
+    </main>
+    <script src="./script.js"></script>
+</body>
+</html>
