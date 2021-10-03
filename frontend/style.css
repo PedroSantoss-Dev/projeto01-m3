@@ -1,10 +1,10 @@
-*{
+* {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
 
-body{
+body {
     font-family: Arial, Helvetica, sans-serif;
     width: 100vw;
     height: 100vh;
@@ -13,38 +13,40 @@ body{
     background-size: cover;
     background-position: right top;
     background-attachment: fixed;
-    
+
 
 }
-main{
+
+main {
     width: 100vh;
-    height: auto; 
+    height: auto;
 }
 
-.title{ 
+.title {
     width: 100vw;
     height: 10rem;
     display: flex;
     justify-content: center;
-   
+
 }
 
-.title h1{
-   width: 40rem; 
-   height: 7rem ;
-   display: flex;
-   justify-content: center;
-   align-items: center;
-   background-color: rgba(196, 204, 201, 0.527);
-   border-radius: 0 0 1rem 1rem;
+.title h1 {
+    width: 40rem;
+    height: 7rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(196, 204, 201, 0.527);
+    border-radius: 0 0 1rem 1rem;
 }
-.container{
+
+.container {
     width: 100vw;
     display: flex;
     justify-content: center;
 }
 
-.form{
+.form {
     width: 35rem;
     height: 12rem;
     display: flex;
@@ -55,37 +57,37 @@ main{
     border-radius: 1rem;
 }
 
-.form input{
-  width: 15rem;
-  height: 1.5rem;
-  outline: none;
-  border-radius: 0.3rem;
-  margin: 0.3rem;
-  border: none;
-  text-align: center;
-  
+.form input {
+    width: 15rem;
+    height: 1.5rem;
+    outline: none;
+    border-radius: 0.3rem;
+    margin: 0.3rem;
+    border: none;
+    text-align: center;
+
 }
 
-.form input:hover{
+.form input:hover {
     opacity: 0.9;
     box-shadow: 0 1px 1px 2px rgba(232, 240, 237, 0.87);
     transform: scale(1.02);
 }
 
-.btn-sub{
+.btn-sub {
     width: 8rem;
     background-color: rgba(106, 116, 115, 0.37);
     font-size: 1.1rem;
 }
 
-.list{
+.list {
     width: 100vw;
     display: flex;
     justify-content: center;
     margin: 3rem;
 }
 
-.cardList{
+.cardList {
     width: 80%;
     display: flex;
     flex-wrap: wrap;
@@ -93,9 +95,9 @@ main{
     margin: 1rem;
 }
 
-.card{
+.card {
     width: 13rem;
-    height: 16rem;
+    height: 20rem;
     border: none;
     display: flex;
     flex-wrap: wrap;
@@ -106,29 +108,33 @@ main{
     margin: 1.5rem;
 }
 
-.card .img{
+.card .img {
     width: 9rem;
     height: 10rem;
     border-radius: 2.4rem;
-    
-}.card .cardInfo{
-    width: 8.5rem;
-    
-    
+    margin: 1rem;
+
+}
+
+.card .cardInfo {
+    width: 10.5rem;
+    height: auto;
 }
 
 
-.card .nome{
+
+
+.card .nome {
     color: rgb(37, 37, 37);
 
 }
 
-.card .genero{
+.card .genero {
     font-size: 13px;
     color: rgba(53, 51, 51, 0.801);
 }
 
-.card .nota{
+.card .nota {
     width: 2rem;
     height: 2rem;
     border-radius: 50%;
@@ -137,17 +143,88 @@ main{
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-left: 8rem ;
-    
+    margin-left: 8rem;
+
+
 }
 
-.btn{
-   width: 3rem;
-   height: 1.5rem;
-   text-align: center;
-   border-radius: 0.4rem;
-   border: none;
-   margin-bottom: 2rem;
-   margin-left: 0.8rem;
-   background-color: rgba(45, 45, 202, 0.678);
+.card .btn-card {
+    display: flex;
+    margin: 0.9rem;
 }
+
+.check-radio {
+    margin: 0.5rem;
+    position: relative;
+}
+
+.check-radio input {
+    -webkit-appearance: none;
+    appearance: none;
+    background-color: rgb(243, 237, 237);
+    width: 20px;
+    height: 15px;
+    border-radius: 10px;
+    box-shadow: inset 0 1px 5px rgba(51, 31, 31, 0.5);
+}
+
+.check-radio input:focus {
+    outline: none;
+    cursor: pointer;
+}
+
+.check-radio input:before {
+    content: '';
+    margin-top: -2.5px;
+    display: block;
+    width: 20px;
+    height: 20px;
+    background-color: white;
+    border-radius: 50%;
+    box-shadow: inset 0 0 0 2px #333, 0 2px 5px rgba(0, 0, 0, .5);
+    position: absolute;
+    left: 0;
+    transition: left .3s ease-out;
+    -webkit-transition: left .3s ease-out;
+}
+
+.check-radio input:after {
+    content: 'off';
+    display: block;
+    margin-top: -2.5px;
+    left: 20px;
+    position: absolute;
+    font-size: 14px;
+    font-weight: bold;
+    transition: left .3s ease-out;
+    -webkit-transition: left .3s ease-out;
+    color: #666;
+}
+
+.check-radio input:checked {
+    width: 2rem;
+    background-color: lime;
+}
+
+.check-radio input:checked:before {
+    left: 1rem;
+    box-shadow: inset 0 0 0 2px green, 0 2px 5px rgba(0, 0, 0, .5);
+}
+
+.check-radio input:checked:after {
+    content: 'on';
+    color: green;
+}
+
+
+.btn {
+    width: 3rem;
+    height: 1.5rem;
+    text-align: center;
+    border-radius: 0.4rem;
+    border: none;
+    margin-bottom: 2rem;
+    margin-right: 0.8rem;
+    background-color: rgba(45, 45, 202, 0.678);
+}
+

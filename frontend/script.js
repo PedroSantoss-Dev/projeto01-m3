@@ -4,24 +4,33 @@ let edicao = false;
 let idEdicao = 0;
 
 
+
+
 const getFilmes = async () => {
   const response = await fetch(api);
   const data = await response.json();
   console.log(data);
   data.map((filme) => {
     card.insertAdjacentHTML('beforeend', `
-        <div class="card">
-         <img class="img"src=${filme.img} >
-             <div class="cardInfo">
-                 <h3 class="nome">${filme.nome}</h3>
-                 <p class="genero">${filme.genero}</p>
-                 <p class="nota">${filme.nota}</p>
-                 <button type="button" class="btn btn1" onclick="putFilme(${filme.id})">Editar</button>
-                 <button type="button" class="btn btn2" onclick="deleteFilme(${filme.id})">Excluir</button>
-             </div>   
-      </div>
+       
+         <div class="card">
+           <img class="img"src=${filme.img} >
+               <div class="cardInfo">
+                   <h3 class="nome">${filme.nome}</h3>
+                   <p class="genero">${filme.genero}</p>    
+                   <p class="nota">${filme.nota}</p>
+                   <div class="btn-card">
+                   <button type="button" class="btn btn1" onclick="putFilme(${filme.id})">Editar</button>
+                   <button type="button" class="btn btn2" onclick="deleteFilme(${filme.id})">Excluir</button>
+                   <div class="check-radio">
+                     <input id=${filme.id} class="check" type="checkbox"/>
+                   </div>
+                   </div>
+               </div> 
+         </div>
       `)
   })
+ 
 }
 getFilmes();
 const submitForm = async (evento) => {
@@ -80,7 +89,7 @@ const submitForm = async (evento) => {
   genero.value = '';
   nota.value = '';
 
-  lista.innerHTML = '';
+  card.innerHTML = '';
 }
 
 
@@ -104,11 +113,11 @@ const putFilme = async (id) => {
   imgEl.value = filme.img;
   generoEl.value = filme.genero;
   notaEl.value = filme.nota;
-
+  
+  card.innerHTML =""
  getFilmes()
-
+ 
 }
-
 const deleteFilme = async (id) => {
 
  const request = new Request(`${api}/${id}`, {
